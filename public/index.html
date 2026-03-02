@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin & Kim Wedding</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for table display */
+        .table-badge {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .search-again {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #666;
+        }
+        .search-again:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kevin & Kim</h1>
+    <p>Find Your Table Number</p>
+
+    <input type="text" id="guestName" placeholder="Enter your full name" autocomplete="off">
+    <button onclick="findTable()">Search</button>
+    
+    <div style="margin-top: 10px; font-size: 14px; color: #999;">
+        
+    </div>
+
+    <div class="result" id="result"></div>
+    
+    <div class="search-again" onclick="document.getElementById('guestName').value=''; document.getElementById('result').innerHTML=''; document.getElementById('guestName').focus();">
+        🔍 Search Again
+    </div>
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

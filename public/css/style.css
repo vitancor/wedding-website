@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8cdda, #fbc2eb);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* Wedding Ring Decoration */
+.container::before {
+    content: "💍";
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+    animation: ringBounce 2s infinite ease-in-out;
+}
+
+@keyframes ringBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+h1 {
+    color: #e91e63;
+    margin-bottom: 5px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(233, 30, 99, 0.2);
+}
+
+p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    position: relative;
+    display: inline-block;
+}
+
+p::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #f8cdda, #e91e63, #f8cdda);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ffe4ec;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: all 0.3s;
+    background: #fff9fc;
+}
+
+input:focus {
+    border-color: #e91e63;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.2);
+}
+
+input::placeholder {
+    color: #ffb6c1;
+    font-style: italic;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #e91e63, #c2185b);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.result {
+    margin-top: 30px;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom scrollbar for result */
+.result::-webkit-scrollbar {
+    width: 6px;
+}
+
+.result::-webkit-scrollbar-track {
+    background: #ffe4ec;
+    border-radius: 10px;
+}
+
+.result::-webkit-scrollbar-thumb {
+    background: #e91e63;
+    border-radius: 10px;
+}
+
+.result::-webkit-scrollbar-thumb:hover {
+    background: #c2185b;
+}
+
+/* Guest result card */
+.guest-result {
+    background: linear-gradient(135deg, #fff9fc, white);
+    border: 2px solid #ffe4ec;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.guest-result::before {
+    content: "💕";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.2em;
+    opacity: 0.3;
+    transform: rotate(15deg);
+}
+
+.guest-result:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(233, 30, 99, 0.15);
+}
+
+.guest-name {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #ffcdd9;
+}
+
+.guest-table {
+    color: #e91e63;
+    font-size: 1.3em;
+    font-weight: 700;
+    background: #fce4ec;
+    padding: 6px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(233, 30, 99, 0.2);
+    border: 1px solid #ffb6c1;
+}
+
+/* No results message */
+.no-result {
+    color: #999;
+    font-size: 1.1em;
+    padding: 25px;
+    background: #fff5f8;
+    border-radius: 15px;
+    border: 2px dashed #ffb6c1;
+}
+
+/* Loading state */
+.loading {
+    color: #e91e63;
+    font-size: 1.1em;
+    padding: 25px;
+    background: #fff5f8;
+    border-radius: 15px;
+    border: 2px dashed #ffb6c1;
+}
+
+.loading::after {
+    content: "...";
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: "."; }
+    40% { content: ".."; }
+    60%, 100% { content: "..."; }
+}
+
+/* Small hearts decoration */
+.container::after {
+    content: "❤️";
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1em;
+    opacity: 0.3;
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .guest-table {
+        font-size: 1.1em;
+        padding: 5px 15px;
+    }
+}
