@@ -2,9 +2,9 @@ const mysql = require('mysql2');
 
 const db = mysql.createPool({
     host: 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
-    user: '3SvyUg4GrPUUCbb.root',  // ← FIXED: lowercase v and y
-    password: 'zzCnS8DEoEloQlSh',    // Keep your password
-    database: 'test',
+    user: '3SvyUg4GrPUUCbb.root',
+    password: 'zzCnS8DEoEloQlSh',
+    database: 'test',  // Use 'test' not 'wedding_db'
     port: 4000,
     ssl: {
         rejectUnauthorized: true
